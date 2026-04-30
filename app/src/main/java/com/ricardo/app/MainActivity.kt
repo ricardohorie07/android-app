@@ -13,6 +13,8 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import android.content.Intent
+import androidx.compose.ui.platform.LocalContext
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +34,7 @@ fun TelaPDV() {
     var quantidade by remember { mutableStateOf(0) }
     val preco = 10.0
     val total = quantidade * preco
+    val context = LocalContext.current
 
     Scaffold { innerPadding ->
         Column(
@@ -60,6 +63,16 @@ fun TelaPDV() {
 
             Button(onClick = { quantidade = 0 }) {
                 Text("Limpar venda")
+
+            }
+
+            Button(
+                onClick = {
+                    val intent = Intent(context, ListaActivity::class.java)
+                    context.startActivity(intent)
+                }
+            ) {
+                Text("Abrir lista")
             }
         }
     }
