@@ -18,7 +18,7 @@ App Android desenvolvido em Kotlin para simular um sistema de caixa (PDV).
 ![Tela Principal](app/images/telas1.png)
 
 ### Funcionamento
-![Funcionamento](images/app.gif)
+![Funcionamento](app/images/app.gif)
 
 ## 🚀 Como rodar
 1. Clonar o repositório
